@@ -1,7 +1,7 @@
 package com.sxexesx;
 
 import com.sxexesx.models.Store;
-import com.sxexesx.service.TaxiFareCalculationService;
+import com.sxexesx.service.CalculationService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,9 +12,9 @@ import java.util.List;
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
-    TaxiFareCalculationService service;
+    CalculationService service;
 
-    public Application(TaxiFareCalculationService service) {
+    public Application(CalculationService service) {
         this.service = service;
     }
 

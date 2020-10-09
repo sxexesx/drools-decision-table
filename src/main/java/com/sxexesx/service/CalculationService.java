@@ -8,18 +8,17 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TaxiFareCalculationService {
+public class CalculationService {
 
     private KieContainer kieContainer;
 
-    public TaxiFareCalculationService(KieContainer kieContainer) {
+    public CalculationService(KieContainer kieContainer) {
         this.kieContainer = kieContainer;
     }
 
     public void calculateFare(List<Store> stores) {
         KieSession kieSession = kieContainer.newKieSession();
         stores.forEach(kieSession::insert);
-//        kieSession.insert(store);
         kieSession.fireAllRules();
         kieSession.dispose();
     }

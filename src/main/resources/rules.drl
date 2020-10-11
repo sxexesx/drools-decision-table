@@ -7,6 +7,5 @@ rule "Calculate Store Rating"
     when
         $s: Store(isActive == true)
     then
-
         System.out.println("This Store is Active");
 end

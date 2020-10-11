@@ -1,10 +1,11 @@
-import com.sxexesx.models.Store
+import com.sxexesx.model.Store
+import com.sxexesx.model.ResultStorage
 
 dialect  "mvel"
 
 rule "Calculate Store Rating"
     when
-        storeInstance: Store(isActive == true);
+        $s: Store(isActive == true)
     then
         System.out.println("This Store is Active");
 end

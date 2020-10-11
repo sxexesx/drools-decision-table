@@ -1,6 +1,7 @@
 package com.sxexesx.service;
 
-import com.sxexesx.models.Store;
+import com.sxexesx.model.ResultStorage;
+import com.sxexesx.model.Store;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.springframework.stereotype.Service;
@@ -16,8 +17,9 @@ public class CalculationService {
         this.kieContainer = kieContainer;
     }
 
-    public void calculateFare(List<Store> stores) {
+    public void calculateRules(List<Store> stores, ResultStorage resultStorage) {
         KieSession kieSession = kieContainer.newKieSession();
+        kieSession.setGlobal("resultStorage", resultStorage);
         stores.forEach(kieSession::insert);
         kieSession.fireAllRules();
         kieSession.dispose();

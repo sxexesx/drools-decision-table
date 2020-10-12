@@ -1,11 +1,16 @@
-import com.sxexesx.model.Store
-import com.sxexesx.model.ResultStorage
+import com.sxexesx.model.Respondent;
 
-dialect  "mvel"
+rule "Rule 1 case 1"
+	when
+		$s: Respondent($s.isActive == "true")
+	then
+		$s.addResult("ACTIVITY", "1");
+end
 
-rule "Calculate Store Rating"
-    when
-        $s: Store(isActive == true)
-    then
-        System.out.println("This Store is Active");
+
+rule "Rule 1 case 2"
+	when
+		$s: Respondent($s.isActive == "false")
+	then
+		$s.addResult("ACTIVITY", "0");
 end

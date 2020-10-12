@@ -1,12 +1,9 @@
 package com.sxexesx.service;
 
-import com.sxexesx.model.ResultStorage;
-import com.sxexesx.model.Store;
+import com.sxexesx.model.Respondent;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class CalculationService {
@@ -17,10 +14,9 @@ public class CalculationService {
         this.kieContainer = kieContainer;
     }
 
-    public void calculateRules(List<Store> stores, ResultStorage resultStorage) {
+    public void calculateRules(Respondent store) {
         KieSession kieSession = kieContainer.newKieSession();
-        kieSession.setGlobal("resultStorage", resultStorage);
-        stores.forEach(kieSession::insert);
+        kieSession.insert(store);
         kieSession.fireAllRules();
         kieSession.dispose();
     }

@@ -1,16 +1,15 @@
 import com.sxexesx.model.Respondent;
 
-rule "Rule 1 case 1"
+rule "Rule 1 Example 1"
 	when
-		$s: Respondent($s.isActive == "true")
+		$s: Respondent($s.gender == "male")
 	then
-		$s.addResult("ACTIVITY", "1");
+		$s.addResult("SEX", "1");
 end
 
-
-rule "Rule 1 case 2"
+rule "Rule 2 Example 2"
 	when
-		$s: Respondent($s.isActive == "false")
+		$s: Respondent($s.gender == "female")
 	then
-		$s.addResult("ACTIVITY", "0");
+		$s.addResult("SEX", "0");
 end

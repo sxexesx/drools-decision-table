@@ -26,7 +26,7 @@ public class DroolsConfiguration {
 
         System.out.println(readDrl(xlsFile, DroolsConfiguration.class));
 
-        Resource dt = ResourceFactory.newClassPathResource(drlFile, getClass());
+        Resource dt = ResourceFactory.newClassPathResource(xlsFile, getClass());
         KieFileSystem kieFileSystem = kieServices.newKieFileSystem().write(dt);
 
         KieBuilder kieBuilder = kieServices.newKieBuilder(kieFileSystem);

@@ -5,18 +5,20 @@ import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CalculationService {
 
-    private KieContainer kieContainer;
+    private final KieContainer kieContainer;
 
     public CalculationService(KieContainer kieContainer) {
         this.kieContainer = kieContainer;
     }
 
-    public void calculateRules(Respondent store) {
+    public void calculateRules(List<Respondent> respondents) {
         KieSession kieSession = kieContainer.newKieSession();
-        kieSession.insert(store);
+        respondents.forEach(kieSession::insert);
         kieSession.fireAllRules();
         kieSession.dispose();
     }

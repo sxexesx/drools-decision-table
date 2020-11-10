@@ -30,7 +30,13 @@ public class Application implements CommandLineRunner {
 //        respondents.addAll(RespondentData.getExample2Data());
 //        respondents.addAll(RespondentData.getExample3Data());
 //        respondents.addAll(RespondentData.getExample4Data());
-        respondents.addAll(RespondentData.getExample5Data());
+//        respondents.addAll(RespondentData.getExample5Data());
+//        respondents.addAll(RespondentData.getExample6Data());
+//        respondents.addAll(RespondentData.getExample7Data());
+//        respondents.addAll(RespondentData.getExample8Data());
+//        respondents.addAll(RespondentData.getExample9Data());
+//        respondents.addAll(RespondentData.getExample10Data());
+        respondents.addAll(RespondentData.getExample11Data());
 
 
         service.calculateRules(respondents);

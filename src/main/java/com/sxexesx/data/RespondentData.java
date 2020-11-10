@@ -1,10 +1,13 @@
 package com.sxexesx.data;
 
-import com.sxexesx.model.Devices;
+import com.sxexesx.model.Car;
+import com.sxexesx.model.Household;
+import com.sxexesx.model.MobileBrand;
 import com.sxexesx.model.Respondent;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 public class RespondentData {
@@ -56,10 +59,77 @@ public class RespondentData {
 
     public static List<Respondent> getExample6Data() {
         return Arrays.asList(
-                new Respondent(1, Collections.singletonList(Devices.MOBILE)),
-                new Respondent(2, Arrays.asList(Devices.COMPUTER, Devices.LAPTOP, Devices.MOBILE, Devices.TV)),
-                new Respondent(3, Arrays.asList(Devices.LAPTOP, Devices.MOBILE)),
-                new Respondent(4, Collections.singletonList(Devices.MOBILE))
+                new Respondent(1, Collections.singletonList("MOBILE")),
+                new Respondent(2, Arrays.asList("COMPUTER", "LAPTOP", "MOBILE", "TV")),
+                new Respondent(3, Arrays.asList("LAPTOP", "MOBILE")),
+                new Respondent(4, Collections.singletonList("MOBILE"))
+        );
+    }
+
+    public static List<Respondent> getExample7Data() {
+        return Arrays.asList(
+                new Respondent(1, new HashMap<String, String>() {{
+                    put("EDUCATION", "University");
+                }}),
+                new Respondent(2, new HashMap<String, String>() {{
+                    put("EDUCATION", "School");
+                }}),
+                new Respondent(3, new HashMap<String, String>() {{
+                    put("EDUCATION", "College");
+                }}),
+                new Respondent(4, new HashMap<String, String>() {{
+                    put("EDUCATION", "No_info");
+                }})
+        );
+    }
+
+    public static List<Respondent> getExample8Data() {
+        return Arrays.asList(
+                new Respondent(1, new Car(1, "Toyota", "Camry", 2010)),
+                new Respondent(2, new Car(1, "Mazda", "RX-7", 1995)),
+                new Respondent(3, new Car(1, "Land Rover", "DISCOVERY", 2008)),
+                new Respondent(4, new Car(1, "Tesla", "Model X", 2020))
+        );
+    }
+
+    public static List<Respondent> getExample9Data() {
+        return Arrays.asList(
+                new Respondent(1, MobileBrand.XIAOMI),
+                new Respondent(2, MobileBrand.SAMSUNG),
+                new Respondent(3, MobileBrand.HUAWEI),
+                new Respondent(4, MobileBrand.APPLE)
+        );
+    }
+
+    public static List<Respondent> getExample10Data() {
+        return Arrays.asList(
+                new Respondent(1,
+                        new Household(100, new HashMap<String, String[]>() {{
+                            put("TVDevices", new String[]{"Nintendo", "PlayStation"});
+                        }})
+                ),
+                new Respondent(2,
+                        new Household(200, new HashMap<String, String[]>() {{
+                            put("TVDevices", new String[]{"Chromecast", "VHS Player"});
+                        }})
+                ),
+                new Respondent(3,
+                        new Household(300, new HashMap<String, String[]>() {{
+                            put("TVDevices", new String[]{});
+                        }})
+                ),
+                new Respondent(4,
+                        new Household(400, new HashMap<String, String[]>() {{
+                            put("TVDevices", new String[]{"XBox", "PlayStation"});
+                        }})
+                ));
+    }
+
+    public static List<Respondent> getExample11Data() {
+        return Arrays.asList(
+                new Respondent(1, true, 56),
+                new Respondent(2, true, 150),
+                new Respondent(3, true, -10)
         );
     }
 

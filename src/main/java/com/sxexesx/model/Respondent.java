@@ -15,12 +15,22 @@ public class Respondent {
     public Integer age;
     public List<String> pets;
     public String city;
-    public List<Devices> devices;
+    public List<String> devices;
+    public Map<String, String> properties;
+    public Car car;
+    public MobileBrand mobileBrand;
+    public Household household;
 
     public Map<String, String> result = new HashMap<>();
 
     public void addResult(String key, String value) {
         result.put(key, value);
+    }
+
+    public Respondent(int id, Boolean isActive, Integer age) {
+        this.id = id;
+        this.isActive = isActive;
+        this.age = age;
     }
 
     public Respondent(int id, String gender) {
@@ -54,8 +64,28 @@ public class Respondent {
         this.city = city;
     }
 
-    public Respondent(int id, List<Devices> devices) {
+    public Respondent(int id, List<String> devices) {
         this.id = id;
         this.devices = devices;
+    }
+
+    public Respondent(int id, Map<String, String> properties) {
+        this.id = id;
+        this.properties = properties;
+    }
+
+    public Respondent(int id, Car car) {
+        this.id = id;
+        this.car = car;
+    }
+
+    public Respondent(int id, MobileBrand mobileBrands) {
+        this.id = id;
+        this.mobileBrand = mobileBrands;
+    }
+
+    public Respondent(int id, Household household) {
+        this.id = id;
+        this.household = household;
     }
 }

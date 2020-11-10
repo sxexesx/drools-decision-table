@@ -41,12 +41,11 @@ BRMS фреймворков на рынке достаточно много: <..
 * доступ к полю объекта (String, Integer, Boolean)
 * пример с диапазоном
 * работа с коллекциями
-    * contains
-    * forall(||) и forall (&&). Пример использования с Map
-    * List<SomeObject>
-    * size для List/Map
-* вложенный объект
-* List<SomeClass> где SomeClass состоит из свойства и List'а
-* update
+    * contains +++
+    * forall(||) и forall (&&). Пример использования с Map +++
+    * size для List/Map +++
+* вложенный объект ++
+* List<SomeClass> где SomeClass состоит из свойства и List'а +
+* modify
 
 

@@ -7,7 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @SpringBootApplication
@@ -25,19 +25,7 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        ArrayList<Respondent> respondents = new ArrayList<>();
-//        respondents.addAll(RespondentData.getExample1Data());
-//        respondents.addAll(RespondentData.getExample2Data());
-//        respondents.addAll(RespondentData.getExample3Data());
-//        respondents.addAll(RespondentData.getExample4Data());
-//        respondents.addAll(RespondentData.getExample5Data());
-//        respondents.addAll(RespondentData.getExample6Data());
-//        respondents.addAll(RespondentData.getExample7Data());
-//        respondents.addAll(RespondentData.getExample8Data());
-//        respondents.addAll(RespondentData.getExample9Data());
-//        respondents.addAll(RespondentData.getExample10Data());
-        respondents.addAll(RespondentData.getExample11Data());
-
+        List<Respondent> respondents = RespondentData.getRespondentData();
 
         service.calculateRules(respondents);
 

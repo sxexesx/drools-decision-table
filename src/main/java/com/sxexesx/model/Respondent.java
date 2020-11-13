@@ -27,6 +27,30 @@ public class Respondent {
         result.put(key, value);
     }
 
+    public Respondent(int id,
+                      Boolean isActive,
+                      String gender,
+                      Integer age,
+                      List<String> pets,
+                      String city,
+                      List<String> devices,
+                      Map<String, String> properties,
+                      Car car,
+                      MobileBrand mobileBrand,
+                      Household household) {
+        this.id = id;
+        this.isActive = isActive;
+        this.gender = gender;
+        this.age = age;
+        this.pets = pets;
+        this.city = city;
+        this.devices = devices;
+        this.properties = properties;
+        this.car = car;
+        this.mobileBrand = mobileBrand;
+        this.household = household;
+    }
+
     public Respondent(int id, Boolean isActive, Integer age) {
         this.id = id;
         this.isActive = isActive;

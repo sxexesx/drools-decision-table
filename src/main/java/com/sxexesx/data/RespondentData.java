@@ -25,7 +25,9 @@ public class RespondentData {
                         new HashMap<String, String>() {{
                             put("EDUCATION", "University");
                         }},
-                        new Car(1, "Toyota", "Camry", 2010),
+                        new Car(1, "Toyota", "Camry", 2010, new HashMap<String, String>() {{
+                            put("POWER", "147");
+                        }}),
                         MobileBrand.XIAOMI,
                         new Household(
                                 100,
@@ -45,7 +47,9 @@ public class RespondentData {
                         new HashMap<String, String>() {{
                             put("EDUCATION", "School");
                         }},
-                        new Car(1, "Mazda", "RX-7", 1995),
+                        new Car(1, "Mazda", "RX-7", 1995, new HashMap<String, String>() {{
+                            put("POWER", "255");
+                        }}),
                         MobileBrand.SAMSUNG,
                         new Household(
                                 200,
@@ -65,7 +69,9 @@ public class RespondentData {
                         new HashMap<String, String>() {{
                             put("EDUCATION", "College");
                         }},
-                        new Car(1, "Land Rover", "DISCOVERY", 2008),
+                        new Car(1, "Land Rover", "DISCOVERY", 2008, new HashMap<String, String>() {{
+                            put("POWER", "190");
+                        }}),
                         MobileBrand.HUAWEI,
                         new Household(
                                 300,
@@ -86,7 +92,9 @@ public class RespondentData {
                         new HashMap<String, String>() {{
                             put("EDUCATION", "No_info");
                         }},
-                        new Car(1, "Tesla", "Model X", 2020),
+                        new Car(1, "Tesla", "Model X", 2020, new HashMap<String, String>() {{
+                            put("POWER", "259");
+                        }}),
                         MobileBrand.APPLE,
                         new Household(
                                 400,

@@ -18,7 +18,7 @@ public class DroolsConfiguration {
         Path to drools rules fine
      */
     private static final String drlFile = "rules.drl";
-    private static final String xlsFile = "rules.xls";
+    private static final String xlsFile = "rules_cartoon.xls";
 
     @Bean
     public KieContainer kieContainer() {

@@ -1,5 +1,6 @@
 package com.sxexesx.service;
 
+import com.sxexesx.model.Person;
 import com.sxexesx.model.Respondent;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
@@ -16,9 +17,9 @@ public class CalculationService {
         this.kieContainer = kieContainer;
     }
 
-    public void calculateRules(List<Respondent> respondents) {
+    public void calculateRules(List<Person> persons) {
         KieSession kieSession = kieContainer.newKieSession();
-        respondents.forEach(kieSession::insert);
+        persons.forEach(kieSession::insert);
         kieSession.fireAllRules();
         kieSession.dispose();
     }

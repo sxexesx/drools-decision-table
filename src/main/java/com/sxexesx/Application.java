@@ -1,6 +1,8 @@
 package com.sxexesx;
 
+import com.sxexesx.data.PersonData;
 import com.sxexesx.data.RespondentData;
+import com.sxexesx.model.Person;
 import com.sxexesx.model.Respondent;
 import com.sxexesx.service.CalculationService;
 import org.springframework.boot.CommandLineRunner;
@@ -25,14 +27,12 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        List<Respondent> respondents = RespondentData.getRespondentData();
 
-        service.calculateRules(respondents);
+        List<Person> personsData = PersonData.getPersonData();
+        service.calculateRules(personsData);
 
-        for (Respondent rsp : respondents) {
-            for (Map.Entry<String, String> entry : rsp.getResult().entrySet()) {
-                System.out.printf("Respondent: %s; %s:%s%n", rsp.id, entry.getKey(), entry.getValue());
-            }
+        for (Person person : personsData) {
+            System.out.printf("%s%n", person.getAge());
         }
 
     }
